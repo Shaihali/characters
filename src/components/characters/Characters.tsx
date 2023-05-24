@@ -16,7 +16,7 @@ interface CharacterData {
 
 
 export function Characters () {
-	
+
 	const [data, setData] = useState<CharacterData>({ info: { count: 0, pages: 0 }, results: [] })
 	const [pageNumber, setPageNumber] = useState(1)
 	const URL = getUrl(pageNumber)
@@ -57,12 +57,14 @@ export function Characters () {
 			<div className='characters-list'>
 			{data.results.map((item, i) => (
           <div className="card" key={i}>
-            <img
+						<a href="/Card">
+							<img
               src={item.image}
               alt={item.name}
               className="card__img"
-            />
-						<div className="card__name">{item.name}</div>
+            	/>
+							<div className="card__name">{item.name}</div>
+						</a>
           </div>
         ))}
 			</div>
