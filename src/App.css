@@ -1,22 +1,63 @@
 .wrapper {
-  max-width: 1367px;
-  margin: 0 auto;
-  padding: 30px;
+	max-width: 1367px;
+	margin: 0 auto;
+	padding: 30px;
 }
-
-
 .characters-list {
-  display: flex;
-  row-gap: 20px;
-  column-gap: 13px;
-  flex-direction: row;
-  flex-wrap: wrap;
+	display: flex;
+	row-gap: 20px;
+	column-gap: 13px;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
+.card {
+	max-width: 320px;
+	height: 400px;
+	padding: 16px;
+	background-color: blanchedalmond;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.card__item {
+	font-size: 24px;
+	max-width: 300px;
+}
+.card__img {
+	max-width: 300px;
+}
+.card__name {
+  font-size: 22px;
+  max-width: 260px;
+}
+
+
+
 .pagination {
-  width: 260px;
-  display: flex;
-  height: 70px;
-  margin: 0 auto;
-  align-items: center;
-  column-gap: 60px;
+	width: 260px;
+	display: flex;
+	height: 70px;
+	margin: 0 auto;
+	align-items: center;
+	column-gap: 60px;
+}
+.current-num {
+	width: 70px;
+	height: 50px;
+	border-radius: 20px;
+	background-color: aliceblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+.button {
+	width: 36px;
+	border-radius: 50%;
+	background-color: #d1a6a6;
+	height: 36px;
+	border: none;
+	cursor: pointer;
 }
