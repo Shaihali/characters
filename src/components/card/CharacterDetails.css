@@ -1,0 +1,31 @@
+.character-details {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+.character-details__img {
+	min-width: 50%;
+	flex: 1;
+}
+img {
+	width: 100%;
+}
+.character-details__item {
+	font-size: 44px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid;
+}	
+span.subtitle {
+	font-weight: 800;
+	font-size: 30px;
+	padding-right: 70px;
+}
+.character-details__contant {
+	width: 50%;
+}

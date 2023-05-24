@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import { Link } from 'react-router-dom';
 
 
 interface CharacterData {
@@ -56,15 +56,15 @@ export function Characters () {
 		<>
 			<div className='characters-list'>
 			{data.results.map((item, i) => (
-          <div className="card" key={i}>
-						<a href="/Card">
+          <div className="card" key={item.id}>
+						<Link to={`/characters/${item.id}`}>
 							<img
               src={item.image}
               alt={item.name}
               className="card__img"
             	/>
 							<div className="card__name">{item.name}</div>
-						</a>
+						</Link>
           </div>
         ))}
 			</div>

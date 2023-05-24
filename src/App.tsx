@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Characters } from './components/characters/Characters';
-import { Card } from './components/card/Card';
+import { CharacterDetails } from './components/card/CharacterDetails';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
@@ -11,10 +11,9 @@ function App() {
     <div className="App">
        <div className='wrapper'>
         <Routes>
-          <Route path="/Characters" Component={Characters} />
-          <Route path='/card' Component={Card} />
+          <Route path="/characters" Component={Characters} />
+          <Route path='/characters/:id' Component={CharacterDetails} />
         </Routes>
-        
        </div>
     </div>
   </BrowserRouter>
