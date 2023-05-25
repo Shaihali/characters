@@ -1,0 +1,18 @@
+.filtration {
+	margin: 0 0 20px;
+	display: flex;
+	column-gap: 5px;
+}
+select {
+	width: 300px;
+	height: 30px;
+	border-radius: 30px;
+	padding: 5px;
+	font-size: 14px;
+	outline: none;
+}
+button {
+	border-radius: 30px;
+	background-color: blue;
+	color: #fff
+}

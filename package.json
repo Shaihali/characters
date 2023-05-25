@@ -1,6 +1,7 @@
 {
   "name": "characters",
   "version": "0.1.0",
+  "homepage": "http://localhost:3000/characters",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
