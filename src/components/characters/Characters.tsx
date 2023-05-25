@@ -21,16 +21,16 @@ export function Characters () {
 	const [pageNumber, setPageNumber] = useState(1)
 	const [selectedFilterStatus, setSelectedFilterStatus] = useState('');
 	const [selectedFilterGender, setSelectedFilterGender] = useState('');
-	const URL = getUrl(pageNumber, selectedFilterStatus, selectedFilterGender)
+	const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/?page=1')
 
 	useEffect(() => {
 		async function fetchData() {
-			const response = await fetch(URL)
+			const response = await fetch(url)
 			const responseData = await response.json()
 			setData(responseData)
 		}
 		fetchData()
-	}, [data])
+	}, [url])
 
 
 	function getUrl (count:number, status:string, gender:string) {
@@ -42,13 +42,15 @@ export function Characters () {
   function handleNextClick() {
 		if(pageNumber < data.info.pages) {
 			setPageNumber(pageNumber + 1);
-			getUrl(pageNumber + 1, selectedFilterStatus, selectedFilterGender);
+			const url = getUrl(pageNumber + 1, selectedFilterStatus, selectedFilterGender);
+			setUrl(url)
 		}
   }
   function handlePrevClick() {
     if (pageNumber > 1) {
       setPageNumber(pageNumber - 1);
-      getUrl(pageNumber - 1, selectedFilterStatus, selectedFilterGender);
+      const url = getUrl(pageNumber - 1, selectedFilterStatus, selectedFilterGender);
+			setUrl(url)
     }
   }
 
@@ -59,6 +61,11 @@ export function Characters () {
 		function handleGetterChange(event: React.ChangeEvent<HTMLSelectElement>) {
 			setSelectedFilterGender(event.target.value)
 		}
+
+		const handleClick = () => {
+			const newUrl = getUrl(pageNumber, selectedFilterStatus, selectedFilterGender)
+			setUrl(newUrl)
+		};
 	
 
 	return (
@@ -75,6 +82,7 @@ export function Characters () {
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
 				</select>
+				<button onClick={handleClick}>Применить</button>
 			</div>
 			<div className='characters-list'>
 			{data.results.map((item, i) => (
